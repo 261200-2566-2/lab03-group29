@@ -3,7 +3,7 @@ public class RPGMain {
         Character player = new Character(1,true,true);
         Skill fireball = new Skill("FireBall",30,20);
         Skill icebreak = new Skill("IceBreak",15,15);
-        // สามารถกำหนด skill ขึ้นมาเองได้โดย (name,damage,manaCost)
+        // สามารถกำหนด skill ขึ้นมาเองได้โดย (name,damage,manaCost);
 
         System.out.println("Basic Stats: ");
         System.out.println("HP : "+player.getMaxHP());
