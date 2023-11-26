@@ -12,12 +12,14 @@ public class Skill {
 
     public void useSkill(Character character) {
         if (character.getCurrentMana() >= manaCost) {
-            System.out.println("Skill : "+name);
+            System.out.println("Skill : "+ name);
             reduceMana(character);
             calActDamage(character);
 
         } else {
-            System.out.println(character.getName() + "does not have enough mana to use " +name);
+            System.out.println("does not have enough mana to use " +name);
+            System.exit(0);
+
         }
     }
     private void reduceMana(Character character){

@@ -35,6 +35,10 @@ public class Character {
 
             calRunSpeed();
     }
+
+    private void checkHP(){
+
+    }
     private void calRunSpeed(){
             this.baseRunSpeed = 10;
             this.currentRunSpeed = baseRunSpeed;
@@ -103,10 +107,14 @@ public class Character {
     public void takeDamage(){
         if(hasShield){
             double damageAfterShield = swordPower*0.5;
-            currentHP -= damageAfterShield;
+            currentHP -=  damageAfterShield;
         }
         if(currentHP <0){
             currentHP =0;
+        }
+        if(currentHP==0){
+            System.out.println("You have been defeated!!");
+            System.exit(0);
         }
     }
     public void reduceMana(int amount) {
@@ -118,7 +126,13 @@ public class Character {
 
     public void calActDamage(int amount){
         currentHP -= amount;
-
+        if(currentHP <0){
+            currentHP =0;
+        }
+        if(currentHP==0){
+            System.out.println("You have been defeated!!");
+            System.exit(0);
+        }
     }
 
 
