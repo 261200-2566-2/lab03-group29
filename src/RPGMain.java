@@ -9,45 +9,54 @@ public class RPGMain {
         System.out.println("HP : "+player.getMaxHP());
         System.out.println("Mana : "+player.getMaxMana());
         System.out.println("RunSpeed : " +player.getCurrentRunSpeed());
+        System.out.println("Sword : "+player.getSwordPower());
+        System.out.println("Shield : "+player.getShieldPower());
         System.out.println("---------------------------------------------------");
 
-       player.levelUp();
+       player.levelUp();                 // แยก LV ของ player ,sword ,shield ออกจากกัน
+       player.equipSword(2);
+       player.equipShield(2);
+
 
        System.out.println("Current Stats: ");
        System.out.println("Current HP : "+player.getMaxHP());
        System.out.println("Current Mana : "+player.getMaxMana());
        System.out.println("Current Run Speed : " +player.getCurrentRunSpeed());
+       System.out.println("Sword : "+player.getSwordPower());
+       System.out.println("Shield : "+player.getShieldPower());
        System.out.println("---------------------------------------------------");
 
-        player.equipSword(2);
-        System.out.println("After equipping sword Stats: ");
-        System.out.println("HP : "+player.getMaxHP());
-        System.out.println("Mana : "+player.getMaxMana());
-        System.out.println("RunSpeed : " +player.getCurrentRunSpeed());
-        System.out.println("---------------------------------------------------");
 
         player.takeDamage(); // ทำ damage โดยคิดจากดาเมจของ sword
         System.out.println("HP : "+player.getCurrentHP());
         System.out.println("Mana : "+player.getMaxMana());
         System.out.println("RunSpeed : " +player.getCurrentRunSpeed());
+        System.out.println("Sword : "+player.getSwordPower());
+        System.out.println("Shield : "+player.getShieldPower());
         System.out.println("---------------------------------------------------");
 
         player.unequipShield();  // สามารถถอด sword || shield ได้ -> unequipSword()
         System.out.println("HP : "+player.getCurrentHP());
         System.out.println("Mana : "+player.getMaxMana());
         System.out.println("RunSpeed : " +player.getCurrentRunSpeed());
+        System.out.println("Sword : "+player.getSwordPower());
+        System.out.println("Shield : "+player.getShieldPower());
         System.out.println("---------------------------------------------------");
 
         fireball.useSkill(player);
         System.out.println("HP : "+player.getCurrentHP());
         System.out.println("Mana : "+player.getCurrentMana());
         System.out.println("RunSpeed : " +player.getCurrentRunSpeed());
+        System.out.println("Sword : "+player.getSwordPower());
+        System.out.println("Shield : "+player.getShieldPower());
         System.out.println("---------------------------------------------------");
 
         icebreak.useSkill(player);
         System.out.println("HP : "+player.getCurrentHP());
         System.out.println("Mana : "+player.getCurrentMana());
         System.out.println("RunSpeed : " +player.getCurrentRunSpeed());
+        System.out.println("Sword : "+player.getSwordPower());
+        System.out.println("Shield : "+player.getShieldPower());
         System.out.println("---------------------------------------------------");
 
 
