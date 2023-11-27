@@ -8,6 +8,8 @@ public class Character {
     private double currentMana;
     private double swordPower;
     private double shieldPower;
+    private Sword sword;
+    private Shield shield;
 
     private boolean hasSword;
     private boolean hasShield;
@@ -20,9 +22,17 @@ public class Character {
             this.level = baseLV;
             this.hasSword = hasSword;
             this.hasShield = hasShield;
-            this.swordPower =15;
-            this.shieldPower =10;
 
+
+            if(hasSword){
+                this.sword = new Sword(1);
+                this.swordPower = sword.getPower();
+            }
+
+            if(hasShield){
+                this.shield =new Shield(1);
+                this.shieldPower = shield.getPower();
+            }
             calStats();
     }
 
@@ -33,12 +43,11 @@ public class Character {
             this.currentHP=maxHP;
             this.currentMana = maxMana;
 
+
             calRunSpeed();
     }
 
-    private void checkHP(){
 
-    }
     private void calRunSpeed(){
             this.baseRunSpeed = 10;
             this.currentRunSpeed = baseRunSpeed;
@@ -73,6 +82,14 @@ public class Character {
         return name;
     }
 
+    public double getSwordPower(){
+        return swordPower;
+    }
+
+    public double getShieldPower(){
+        return shieldPower;
+    }
+
 
     public void levelUp(){
         this.level++;
@@ -81,26 +98,30 @@ public class Character {
 
     public void equipSword(int swordLV){
         this.hasSword =true;
-        this.swordLV = swordLV;
-
+        this.sword = new Sword(swordLV);
+        this.swordPower = sword.getPower();
+        this.swordLV++;
         calRunSpeed();
-
     }
 
     public  void equipShield(int shieldLV){
         this.hasShield = true;
-        this.shieldLV = shieldLV;
-
+        this.shield = new Shield(shieldLV);
+        this.shieldPower = shield.getPower();
+        this.shieldLV++;
         calRunSpeed();
     }
 
     public void unequipSword(){
         this.hasSword = false;
+        this.swordPower =0;
+
         calRunSpeed();
     }
 
     public void unequipShield(){
         this.hasShield = false;
+        this.shieldPower =0;
         calRunSpeed();
     }
 
