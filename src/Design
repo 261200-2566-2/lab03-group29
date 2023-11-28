@@ -1,0 +1,36 @@
+Character :
+    - Level
+    - HP
+    - Mana
+    - RunSpeed
+    - Has_Sword
+    - Has_Shield
+
+       Operation :
+        - เริ่มต้นโดย baseLVที่ 1 และจะสามารถใส่ sword , shield ได้
+        - สามารถ LevelUp ที่ Chararcter ได้โดยเพิ่ม HP , mana และ RunSpeed
+        - เมื่อ LevelUp  HP , mana จะกลับไปเต็มที่ MaxHP , MaxMana
+        - ถ้า HP และ Mana  = 0 จะจบเกม
+
+
+Sword/Shield :
+     - Power
+     - Level
+
+        Operation :
+         - สามารถเพิ่ม level ของ Sword/Shield ได้
+         - โดยจะเพิ่ม Damage และลด Speedrun ของ Character อีกด้วย
+         - สามารถทำ Damage โดย Sword ได้คิดจาก Damage ของ Sword
+           -คิดได้ 2 กรณีคือ  > hasShield จะไปหักลบกับ PowerShield
+                          > !hasShield จะไปหักลบกับ HP โดยตรง
+         - มี unequip สำหรับ Sword/Shield
+
+
+Skill :
+    - Name
+    - ManaCost
+    - Damage
+
+        Operation :
+         - Skill สามารถตั้ง Name , Damage ,MamaCost ของ skill ได้
+         - เมื่อใช้ Skill จะ check Mana ที่มีอยู่ว่าพอหรือไม่
